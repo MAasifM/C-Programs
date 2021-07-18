@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main()
+{
+	float words = 0, alpha = 0;
+	char ch, tch, ach;
+	float avg;
+	printf("Enter a Sentence: ");
+	tch = ' ';
+	ch = getchar();
+	while (ch != '\n')
+	{
+		if (('A' <= ch&&ch <= 'Z') || ('a' <= ch&&ch <= 'z'))
+		{
+			ach = ch;
+			alpha++;
+		}
+		{
+			if (tch == ' '&&ch == ' ')
+			{
+				words = words;
+			}
+			else if (tch != ' '&&ch == ' ')
+			{
+				words++;
+			}
+			else
+			{
+				words = words;
+			}
+		}
+		tch = ch;
+		ch = getchar();
+	}
+	if (ch != ' ')
+	{
+		words++;
+	}
+	avg = alpha / words;
+	printf("Average word length: %.1f\n%f\n%f", avg, words, alpha);
+	system("pause");
+	return 0;
+}

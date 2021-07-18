@@ -1,0 +1,65 @@
+#include<stdio.h>
+int main()
+{
+	int s, i, a[10000], j, k, l, m, min = 32767, option, max = -32768;
+	printf("Enter The Length of Your Array: ");
+	scanf_s("%d", &s);
+	printf("Enter Numbers in The Array: \n");
+	for (i = 0; i < s; i++)
+	{
+		scanf_s("%d", &a[i]);
+	}
+	printf("How Do You Want to Arrange Them: \nPress and Enter '1' for Ascending Order\nPress and Enter '2' for Descending Order\n");
+	scanf_s("%d", &option);
+	switch (option)
+	{
+	case 1:
+	{
+		for (k = 0; k < s; k++)
+		{
+			for (j = 0; (j + k) < s; j++)
+			{
+				if (a[j + k] < min)
+				{
+					min = a[j + k];
+					m = j + k;
+				}
+			}
+			a[m] = a[k];
+			a[k] = min;
+			min = 32767;
+		}
+		printf("The Array in The Ascending Order is: \n");
+		for (l = 0; l < s; l++)
+		{
+			printf("%d ", a[l]);
+		}
+		break;
+	}
+	case 2:
+	{
+		for (k = 0; k < s; k++)
+		{
+			for (j = 0; (j + k) < s; j++)
+			{
+				if (a[j + k] > max)
+				{
+					max = a[j + k];
+					m = j + k;
+				}
+			}
+			a[m] = a[k];
+			a[k] = max;
+			max = -32768;
+		}
+		printf("The Array in The Descending Order is: \n");
+		for (l = 0; l < s; l++)
+		{
+			printf("%d ", a[l]);
+		}
+		break;
+	}
+	}
+	system("pause");
+	return 0;
+}

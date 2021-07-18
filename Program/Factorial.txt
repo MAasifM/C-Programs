@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+	int n, a, ans;
+	printf("Enter a Positive Integer: ");
+	scanf_s("%d", &n);
+	ans = 1;
+	a = n;
+	for (; a > 1; a--)
+	{
+		ans = ans * a;
+	}
+	printf("Factorial of %d is %d\n", n, ans);
+	system("pause");
+	return 0;
+}

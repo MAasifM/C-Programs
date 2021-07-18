@@ -1,0 +1,45 @@
+#include<stdio.h>
+int main()
+{
+	int a[32767], b[32767], i, j, r, k;
+	printf("Enter the Length of Array: ");
+	scanf_s("%d", &i);
+	printf("Enter Values in the Array: \n");
+	for (j = 0; j < i; j++)
+	{
+		scanf_s("%d", &a[j]);
+	}
+	printf("Enter the Number of Rotations: ");
+	scanf_s("%d", &r);
+	if (r >= 0)
+	{
+		r = r%i;
+		for (j = 0; j < (i - r); j++)
+		{
+			b[j + r] = a[j];
+		}
+		for (k = 1; k <= r; k++)
+		{
+			b[k - 1] = a[j + k - 1];
+		}
+	}
+	if (r < 0)
+	{
+		r = -((-r) % i);
+		for (j = 0; j < (i + r); j++)
+		{
+			b[j] = a[j - r];
+		}
+		for (k = 1; k <= -r; k++)
+		{
+			b[k + j - 1] = a[k - 1];
+		}
+	}
+	printf("The New Rotated Array is: \n");
+	for (j = 0; j < i; j++)
+	{
+		printf("%d ", b[j]);
+	}
+	system("pause");
+	return 0;
+}

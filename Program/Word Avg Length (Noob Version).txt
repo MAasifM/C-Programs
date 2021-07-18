@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+	float words = 1, alpha = 0;
+	char ch;
+	float avg;
+	printf("Enter a Sentence: ");
+	ch = getchar();
+	while (ch != '\n')
+	{
+		if (ch != ' ')
+			alpha++;
+		else
+			words++;
+		ch = getchar();
+	}
+	avg = alpha / words;
+	printf("Average word length: %.1f\n", avg);
+	system("pause");
+	return 0;
+}

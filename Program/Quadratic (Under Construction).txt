@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	int a, b, c, disc;
+	float x, x1, x2;
+	printf("Enter the co-effiecient of 'x^2': ");
+	scanf_s("%d", &a);
+	printf("Enter the co-effiecient of 'x': ");
+	scanf_s("%d", &b);
+	printf("Enter the constant: ");
+	scanf_s("%d", &c);
+	disc = (b*b) - (4) * (a)*(c);
+	if (disc < 0)
+	{
+		printf("This Program cannot solve Imaginary Roots.\nPlease close the Program and try again!!!\n");
+	}
+	else if (disc == 0)
+	{
+		x = (-b) / 2*(a);
+		printf("First Root x1 = %f\n", x);
+		printf("Second Root x2 = %f\n", x);
+	}
+	else
+	{
+		x1 = (-b + ((disc) ^ (1 / 2))) / (2 * a);
+		x2 = (-b - ((disc) ^ (1 / 2))) / (2 * a);
+		printf("First Root x1 = %f\n", x1);
+		printf("Second Root x2 = %f\n", x2);
+	}
+	system("pause");
+	return 0;
+}

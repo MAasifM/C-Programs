@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+	int days, day, a, i;
+	printf("Enter Number Of Days In Month: ");
+	scanf_s("%d", &days);
+	printf("Enter Starting Day of The Week: \nSunday=1\nMonday=2\nTueday=3\nWednesday=4\nThursday=5\nFriday=6\nSaturday=7\n");
+	scanf_s("%d", &day);
+	printf("Sun\tMon\tTue\tWed\tThur\tFri\tSat\n");
+	for (i = 1; i < day; i++)
+	{
+		printf("\t");
+	}
+	for (a = 1; a <= days; a++)
+	{
+		printf("%2d\t", a);
+		if ((a % 7 == (8 - day)))
+		{
+			printf("\n");
+		}
+	}
+	printf("\n");
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int i, j;
+	char a[10000];
+	printf("Enter a String: \n");
+	for (i = 0; i < 10000 && a != '\n'; i++)
+	{
+		scanf_s("%c", &a[i]);
+		if (a[i] == '\n')
+		{
+			break;
+		}
+	}
+	j = i;
+	printf("\nThe Reflected String is: \n");
+	for (; j >= 0; j--)
+	{
+		printf("%c", a[j]);
+	}
+	printf("\n");
+	system("pause");
+	return 0;
+}

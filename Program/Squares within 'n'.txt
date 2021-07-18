@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+	int a, n;
+	printf("Enter a number: ");
+	scanf_s("%d", &n);
+	for (a = 2; a*a <= n; a++,a++)
+	{
+		printf("%d\n", a*a);
+	}
+	system("pause");
+	return 0;
+}

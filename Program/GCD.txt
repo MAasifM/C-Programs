@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+	int a, b, div, x = 0;
+	printf("Enter two integers: \n");
+	scanf_s("%d", &a);
+	scanf_s("%d", &b);
+	if (a > b)
+		div = a;
+	else div = b;
+	for (; x == ((a%div == 0) && (b%div == 0)); div--)
+	{}
+	printf("Greatest Common Divisor is : %d\n", div);
+	system("pause");
+	return 0;
+}

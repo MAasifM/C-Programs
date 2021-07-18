@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+	char a = ' ';
+	char A = 2;
+	printf("Enter Phone Number: ");
+	for (; a != '\n';)
+	{
+		a = getchar();
+		if (a == 'A' || a == 'B' || a == 'C')
+		printf("2");
+		if (a == 'D' || a == 'E' || a == 'F')
+			printf("3");
+		if (a == 'G' || a == 'H' || a == 'I')
+			printf("4");
+		if (a == 'J' || a == 'K' || a == 'L')
+			printf("5");
+		if (a == 'M' || a == 'N' || a == 'O')
+			printf("6");
+		if (a == 'P' || a == 'Q' || a == 'R' || a == 'S')
+			printf("7");
+		if (a == 'T' || a == 'U' || a == 'V')
+			printf("8");
+		if (a == 'W' || a == 'X' || a == 'Y' || a == 'Z')
+			printf("9");
+	}
+	printf("\n");
+	system("pause");
+	return 0;
+}

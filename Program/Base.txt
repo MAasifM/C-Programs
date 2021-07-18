@@ -1,0 +1,35 @@
+#include<stdio.h>
+int main()
+{
+	int onumber, number, answer, base, n;
+	float b;
+	printf("Enter the Residue Class Modulo: ");
+	scanf_s("%d", &base);
+	printf("Enter the Number: ", base);
+	scanf_s("%d", &onumber);
+	number = onumber;
+	n = 0;
+	if (number<base)
+	{
+		printf("The Number %d Under Residue Class Modulo %d is %d\n", onumber, base, onumber);
+	}
+	else if (onumber == base)
+	{
+		printf("The Number %d Under Residue Class Modulo %d is 10\n", onumber, base);
+	}
+	else
+	{
+		for (b = 0.1; number > base;)
+		{
+			answer = number%base;
+			number = number / base;
+			b = b * 10;
+			n = n + (answer)*(b);
+		}
+		n = n + (number%base)*(b * 10);
+		n = n + (number / base)*(b * 10 * 10);
+		printf("The Number %d Under Residue Class Modulo %d is %d\n", onumber, base, n);
+	}
+	system("pause");
+	return 0;
+}

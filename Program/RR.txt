@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	int Runs, Target, O, LO;
+	float Overs, Balls, RRR, LOvers, LBalls, CRR, LRR, TOvers, TBalls;
+	printf("Enter Total Overs: ");
+	scanf_s("%f", &TOvers);
+	printf("Enter the Required Target: ");
+	scanf_s("%d", &Target);
+	printf("Enter the Total Overs of Last Innings: ");
+	scanf_s("%f", &LOvers);
+	printf("Enter the Current Runs: ");
+	scanf_s("%d", &Runs);
+	printf("Enter the Current Overs: ");
+	scanf_s("%f", &Overs);
+	LO = LOvers;
+	LBalls = (LO * 6) + (LOvers - LO) * 10;
+	LRR = (Target / LBalls) * 6;
+	O = Overs;
+	Balls = (O * 6) + (Overs - O) * 10;
+	TBalls = TOvers * 6;
+	CRR = (Runs / Balls) * 6;
+	RRR = ((Target - Runs) / (TBalls - Balls)) * 6;
+	printf("Run Rate of Last Innings: %.2f\n", LRR);
+	printf("Required Runs: %d\n", Target - Runs + 1);
+	printf("Remaining Balls: %0.f\n", TBalls - Balls);
+	printf("Current Run Rate: %.2f\n", CRR);
+	printf("Required Run Rate: %.2f\n", RRR);
+	getchar();
+	getchar();
+	return 0;
+}

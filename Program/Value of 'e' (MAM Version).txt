@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+	float e = 1, fac = 1;
+	int a, num;
+	printf("Enter the number 'n': ");
+	scanf_s("%d", &num);
+	for (a = 1; a <= num; a++)
+	{
+		fac = fac*a;
+		e = e + (1.0f / fac);
+	}
+	printf("Value of 'e': %f\n", e);
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,263 @@
+#include<stdio.h>
+int main()
+{
+	int marks_bio, marks_chem, marks_phy, option2, options;
+	char grade_bio, grade_chem, grade_phy, grade_final, sign_bio, sign_chem, sign_phy, sign_final;
+	float gpa_bio, gpa_chem, gpa_phy, totalgpa;
+	marks_bio = 0;
+	marks_chem = 0;
+	marks_phy = 0;
+	printf("What Would You Like To Do?\nOPTIONS\n");
+	printf("Press and Enter '1' to Enter Marks\nPress and Enter '2' to Edit Marks\nPress and Enter '3' to Delete Marks\nPress and Enter '4' to Calculate CGPA\nPress and Enter '5' to Exit Program\n");
+	scanf_s("%d", &options);
+	while (1)
+	{
+		switch (options)
+		{
+		case (1) :
+		{
+			printf("Enter Marks In Biology: ");
+			scanf_s("%d", &marks_bio);
+			while (marks_bio > 100 || marks_bio < 0)
+			{
+				printf("Inappropriate marks. Enter marks between 0 to 100: ");
+				scanf_s("%d", &marks_bio);
+			}
+			printf("Enter Marks In Chemistry: ");
+			scanf_s("%d", &marks_chem);
+			while (marks_chem > 100 || marks_chem < 0)
+			{
+				printf("Inappropriate marks. Enter marks between 0 to 100: ");
+				scanf_s("%d", &marks_chem);
+			}
+			printf("Enter Marks In Physics: ");
+			scanf_s("%d", &marks_phy);
+			while (marks_phy > 100 || marks_phy < 0)
+			{
+				printf("Inappropriate marks. Enter marks between 0 to 100: ");
+				scanf_s("%d", &marks_phy);
+			}
+			break;
+		}
+		case (2) :
+		{
+			printf("Which Marks Would You Like To Edit?\n");
+			printf("Press and Enter 1 for Biology\nPress and Enter 2 for Chemistry\nPress and Enter 3 for Physics\nPress and Enter 4 To Stop Editing Marks\n");
+			scanf_s("%d", &option2);
+			while (option2 < 4)
+			{
+				switch (option2)
+				{
+				case (1) :
+				{
+					printf("Enter Marks In Biology: ");
+					scanf_s("%d", &marks_bio);
+					while (marks_bio > 100 || marks_bio < 0)
+					{
+						printf("Inappropriate marks. Enter marks between 0 to 100: ");
+						scanf_s("%d", &marks_bio);
+					}
+					break;
+				}
+				case (2) :
+				{
+					printf("Enter Marks In Chemistry: ");
+					scanf_s("%d", &marks_chem);
+					while (marks_chem > 100 || marks_chem < 0)
+					{
+						printf("Inappropriate marks. Enter marks between 0 to 100: ");
+						scanf_s("%d", &marks_chem);
+					}
+					break;
+				}
+				case (3) :
+				{
+					printf("Enter Marks In Physics: ");
+					scanf_s("%d", &marks_phy);
+					while (marks_phy > 100 || marks_phy < 0)
+					{
+						printf("Inappropriate marks. Enter marks between 0 to 100: ");
+						scanf_s("%d", &marks_phy);
+					}
+				}
+				}
+				printf("Which Mraks Would You Like To Edit Again?\n");
+				printf("Press and Enter 1 for Biology\nPress and Enter 2 for Chemistry\nPress and Enter 3 for Physics\nPress and Enter 4 To Stop Editing Marks\n");
+				scanf_s("%d", &option2);
+			}
+			break;
+		}
+		case (3) :
+		{
+			marks_bio = 0;
+			marks_chem = 0;
+			marks_phy = 0;
+			break;
+		}
+		case (4) :
+		{
+			if (marks_bio >= 80 && marks_bio <= 100)
+			{
+				gpa_bio = 4.0f;
+				grade_bio = 'A';
+				sign_bio = ' ';
+			}
+			else if (marks_bio >= 70 && marks_bio < 80)
+			{
+				gpa_bio = 3.5f;
+				grade_bio = 'B';
+				sign_bio = '+';
+			}
+			else if (marks_bio >= 60 && marks_bio < 70)
+			{
+				gpa_bio = 3.0f;
+				grade_bio = 'B';
+				sign_bio = ' ';
+			}
+			else if (marks_bio >= 50 && marks_bio < 60)
+			{
+				gpa_bio = 2.5f;
+				grade_bio = 'C';
+				sign_bio = '+';
+			}
+			else if (marks_bio >= 40 && marks_bio < 50)
+			{
+				gpa_bio = 2.0f;
+				grade_bio = 'C';
+				sign_bio = ' ';
+			}
+			else if (marks_bio < 40)
+			{
+				gpa_bio = 0.0f;
+				grade_bio = 'F';
+				sign_bio = ' ';
+			}
+
+			if (marks_chem >= 80 && marks_chem <= 100)
+			{
+				gpa_chem = 4.0f;
+				grade_chem = 'A';
+				sign_chem = ' ';
+			}
+			else if (marks_chem >= 70 && marks_chem < 80)
+			{
+				gpa_chem = 3.5f;
+				grade_chem = 'B';
+				sign_chem = '+';
+			}
+			else if (marks_chem >= 60 && marks_chem < 70)
+			{
+				gpa_chem = 3.0f;
+				grade_chem = 'B';
+				sign_chem = ' ';
+			}
+			else if (marks_chem >= 50 && marks_chem < 60)
+			{
+				gpa_chem = 2.5f;
+				grade_chem = 'C';
+				sign_chem = '+';
+			}
+			else if (marks_chem >= 40 && marks_chem < 50)
+			{
+				gpa_chem = 2.0f;
+				grade_chem = 'C';
+				sign_chem = ' ';
+			}
+			else if (marks_chem < 40)
+			{
+				gpa_chem = 0.0f;
+				grade_chem = 'F';
+				sign_chem = ' ';
+			}
+
+			if (marks_phy >= 80 && marks_phy <= 100)
+			{
+				gpa_phy = 4.0f;
+				grade_phy = 'A';
+				sign_phy = ' ';
+			}
+			else if (marks_phy >= 70 && marks_phy < 80)
+			{
+				gpa_phy = 3.5f;
+				grade_phy = 'B';
+				sign_phy = '+';
+			}
+			else if (marks_phy >= 60 && marks_phy < 70)
+			{
+				gpa_phy = 3.0f;
+				grade_phy = 'B';
+				sign_phy = ' ';
+			}
+			else if (marks_phy >= 50 && marks_phy < 60)
+			{
+				gpa_phy = 2.5f;
+				grade_phy = 'C';
+				sign_phy = '+';
+			}
+			else if (marks_phy >= 40 && marks_phy < 50)
+			{
+				gpa_phy = 2.0f;
+				grade_phy = 'C';
+				sign_phy = ' ';
+			}
+			else if (marks_phy < 40)
+			{
+				gpa_phy = 0.0f;
+				grade_phy = 'F';
+				sign_phy = ' ';
+			}
+
+			totalgpa = (gpa_bio + gpa_chem + gpa_phy) / 3;
+			if (totalgpa == 4.0f)
+			{
+				grade_final = 'A';
+				sign_final = ' ';
+			}
+			else if (totalgpa >= 3.5 && totalgpa < 4.0)
+			{
+				grade_final = 'B';
+				sign_final = '+';
+
+			}
+			else if (totalgpa >= 3.0 && totalgpa < 3.5)
+			{
+				grade_final = 'B';
+				sign_final = ' ';
+			}
+			else if (totalgpa >= 2.5 && totalgpa < 3.0)
+			{
+				grade_final = 'C';
+				sign_final = '+';
+			}
+			else if (totalgpa >= 2.0 && totalgpa < 2.5)
+			{
+				grade_final = 'C';
+				sign_final = ' ';
+			}
+			else if (totalgpa < 2.0)
+			{
+				grade_final = 'F';
+				sign_final = ' ';
+			}
+			//Following is the summary of our code
+			printf("Subject\t\tMarks\t\tGrade\t\tGPA\n");
+			printf("Biology\t\t%.1d\t\t%c%c\t\t%.2f\n", marks_bio, grade_bio, sign_bio, gpa_bio);
+			printf("Chemistry\t%.1d\t\t%c%c\t\t%.2f\n", marks_chem, grade_chem, sign_chem, gpa_chem);
+			printf("Physics\t\t%.1d\t\t%c%c\t\t%.2f\n", marks_phy, grade_phy, sign_phy, gpa_phy);
+			printf("GPA = %.2f/4.0\n", totalgpa);
+			printf("Final Grade = %c%c\n", grade_final, sign_final);
+			break;
+		}
+		case (5) :
+		{
+			return 0;
+			break;
+		}
+		}
+		printf("What Would You Like To Do Next?\nOPTIONS\n");
+		printf("Press and Enter '1' to Enter Marks\nPress and Enter '2' to Edit Marks\nPress and Enter '3' to Delete Marks\nPress and Enter '4' to Calculate CGPA\nPress and Enter '5' to Exit Program\n");
+		scanf_s("%d", &options);
+	}
+	system("pause");
+	return 0;
+}

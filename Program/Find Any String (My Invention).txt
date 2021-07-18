@@ -1,0 +1,48 @@
+#include<stdio.h>
+int main()
+{
+	int i, j, k, l, m, r = 0, ans = 0;
+	char a[10000], b[10000];
+	printf("Enter a String: \n");
+	for (i = 0; i < 10000 && a != '\n'; i++)
+	{
+		scanf_s("%c", &a[i]);
+		if (a[i] == '\n')
+		{
+			break;
+		}
+	}
+	printf("Enter the String You Want to Find: \n");
+	for (j = 0; j < 10000 && b != '\n'; j++)
+	{
+		scanf_s("%c", &b[j]);
+		if (b[j] == '\n')
+		{
+			break;
+		}
+	}
+	m = j;
+	for (l = 0; l <= i; l++)
+	{
+		for (k = l; k < (m + l); k++)
+		{
+			if (a[k] == b[k - l])
+			{
+				++r;
+			}
+		}
+		if (r == j)
+		{
+			++ans;
+		}
+		r = 0;
+	}
+	printf("The string '");
+	for (i = 0; i <= j; i++)
+	{
+		printf("%c", b[i]);
+	}
+	printf("' is Repeated %d Times in the Original String.\n", ans);
+	system("pause");
+	return 0;
+}

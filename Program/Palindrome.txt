@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	int ointeger, integer, rinteger, remainder;
+	printf("Enter an Integer: ");
+	scanf_s("%d", &ointeger);
+	integer = ointeger;
+	rinteger = 0;
+	while (integer != 0)
+	{
+		remainder = integer % 10;
+		rinteger = (rinteger * 10) + remainder;
+		integer = integer / 10;
+	}
+	if (ointeger == rinteger)
+	{
+		printf("The Number %d is a Palindrome\n", ointeger);
+	}
+	else
+	{
+		printf("The Number %d is Not a Palindrome\n", ointeger);
+	}
+	system("pause");
+	return 0;
+}

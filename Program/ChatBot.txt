@@ -1,0 +1,192 @@
+#include<stdio.h>
+int main()
+{
+	char q[100];
+	char kws[39][10] = { { ' ', 'c', ' ', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'o', 'r', 'i', 'g', 'i', 'n', '~', '~', '~', '~' },
+	{ 'd', 'e', 'v', 'e', 'l', 'o', 'p', '~', '~', '~' },
+	{ ' ', 'b', ' ', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'b', 'c', 'p', 'l', '~', '~', '~', '~', '~', '~' },
+	{ 'u', 'n', 'i', 'x', '~', '~', '~', '~', '~', '~' },
+	{ 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e', '~', '~' },
+	{ 'a', 'l', 'g', 'o', 'l', '~', '~', '~', '~', '~' },
+	{ 'r', 'i', 't', 'c', 'h', 'i', 'e', '~', '~', '~' },
+	{ 't', 'h', 'o', 'm', 'p', 's', 'o', 'n', '~', '~' },
+	{ 'm', 'a', 'c', 'h', 'i', 'n', 'e', '~', '~', '~' },
+	{ 'c', 'o', 'd', 'e', '~', '~', '~', '~', '~', '~' },
+	{ 'n', 'b', '~', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'n', 'e', 'w', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'c', '8', '9', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'c', '9', '0', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'c', '9', '9', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'k', '&', 'r', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'c', '+', '+', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'j', 'a', 'v', 'a', '~', '~', '~', '~', '~', '~' },
+	{ 'c', '#', '~', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'p', 'e', 'r', 'l', '~', '~', '~', '~', '~', '~' },
+	{ 'p', 'r', 'o', 'p', 'e', 'r', 't', '~', '~', '~' },
+	{ 's', 't', 'r', 'e', 'n', 'g', 't', 'h', '~', '~' },
+	{ 'w', 'e', 'a', 'k', '~', '~', '~', '~', '~', '~' },
+	{ 'e', 'f', 'f', 'e', 'c', 't', '~', '~', '~', '~' },
+	{ 'u', 's', 'e', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'd', 'i', 'f', 'f', 'e', 'r', '~', '~', '~', '~' },
+	{ 'd', 'i', 's', 't', 'i', 'n', 'g', '~', '~', '~' },
+	{ 'e', 'x', 'a', 'm', 'p', 'l', 'e', '~', '~', '~' },
+	{ 's', 't', 'a', 'n', 'd', 'a', 'r', 'd', '~', '~' },
+	{ 'b', 'a', 's', 'e', '~', '~', '~', '~', '~', '~' },
+	{ 'f', 'o', 'r', 'm', '~', '~', '~', '~', '~', '~' },
+	{ ' ', 'c', '?', '~', '~', '~', '~', '~', '~', '~' },
+	{ ' ', 'b', '?', '~', '~', '~', '~', '~', '~', '~' }, 
+	{ 'p', 'r', 'o', 'g', 'r', 'a', 'm', '~', '~', '~' },
+	{ 'w', 'h', 'o', '~', '~', '~', '~', '~', '~', '~' },
+	{ 'f', 'a', 't', 'h', 'e', 'r', '~', '~', '~', '~' },
+	{ 'a', 's', 's', 'e', 'm', 'b', 'l', 'y', '~', '~' } };
+	int i, j, k, l, rn[8] = { -1, -1, -1, -1, -1, -1, -1, -1 }, m, r = 0 , a = 0, n = -1, t, s;
+	printf("This is Your ChatBot!!!\nFeel Free to Ask Any Question.\nWhat is Your Question:\n");
+	scanf_s("%c", &q[0]);
+	if ((65 <= q[0] && q[0] <= 90) && q[0] != '\n')
+	{
+		q[0] = q[0] + 32;
+	}
+	while (1)
+	{
+		if (q[0] != '\n')
+		{
+			for (i = 0; i < 100 && q[i] != '\n'; i++)
+			{
+				scanf_s("%c", &q[i + 1]);
+				if ((65 <= q[i + 1] && q[i + 1] <= 90) && q[i + 1] != '\n')
+				{
+					q[i + 1] = q[i + 1] + 32;
+				}
+			}
+			for (i++; i < 100; i++)
+			{
+				q[i] = '~';
+			}
+			for (m = 0; m < 39; m++)
+			{
+				for (l = 0; l < i; l++)
+				{
+					for (k = l; (k < (10 + l)) && (kws[m][k - l] != '~'); k++)
+					{
+						if (q[k] == kws[m][k - l])
+						{
+							r++;
+						}
+						a++;
+					}
+					if (r == a)
+					{
+						++n;
+						rn[n] = m;
+					}
+					r = 0;
+					a = 0;
+				}
+			}
+			//This is the Answer Section
+			if ((rn[0] == 0 && rn[1] == -1) || (rn[0] == 33 && rn[1] == -1))
+			{
+				printf("\nC is a widely used Programming Language developed in the early 1970s at Bell Laboratories. ");
+				printf("C is a general-purpose programming language that is extremely popular, simple and flexible. ");
+				printf("It is machine - independent, structured programming language which is used extensively in various applications.");
+			}
+			if ((rn[1] == 1 && rn[2] == -1) || (rn[1] == 32 && rn[2] == -1) || (rn[1] == 2 && rn[2] == -1))
+			{
+				printf("C is a by-product of the UNIX Operating System, which was developed at the Bell Laboratories by Ken Thompson, Denis Ritchie and others.");
+			}
+			if ((rn[0] == 3 && rn[1] == -1) || (rn[0] == 34 && rn[1] == -1))
+			{
+				printf("B is a programming language developed at Bell Labs circa 1969. It is the work of Ken Thompson with Dennis Ritchie. B was derived from BCPL");
+			}
+			if (rn[0] == 4 && rn[1] == -1)
+			{
+				printf("BCPL Basic Combined Programming Language is a procedural, imperative, and structured computer programming language. Originally intended for writing compilers for other languages, BCPL is no longer in common use. However, its influence is still felt because a stripped down and syntactically changed version of BCPL, called B, was the language on which the C programming language was based.");
+			}
+			if (rn[0] == 5 && rn[1] == -1)
+			{
+				printf("UNIX is a family of multitasking, multiuser computer operating systems that derive from the original AT&T Unix, development starting in the 1970s at the Bell Labs research center by Ken Thompson, Dennis Ritchie, and others.");
+			}
+			if (rn[0] == 6 && rn[1] == 35 && rn[2] == -1)
+			{
+				printf("A programming language is a formal language, which comprises a set of instructions that produce various kinds of output. Programming languages are used in computer programming to implement algorithms.");
+			}
+			if (rn[0] == 7 && rn[1] == -1)
+			{
+				printf("ALGOL 60 (short for Algorithmic Language 1960) is a member of the ALGOL family of computer programming languages. It followed on from ALGOL 58 which had introduced code blocks and the begin and end pairs for delimiting them. ALGOL 60 was the first language implementing nested function definitions with lexical scope. It gave rise to many other programming languages, including CPL, Simula, BCPL, B, Pascal, and C.");
+			}
+			if (rn[0] == 8 && rn[1] == 36 && rn[2] == -1)
+			{
+				printf("Dennis MacAlistair Ritchie (September 9, 1941 – c. October 12, 2011) was an American computer scientist.[2] He created the C programming language and, with long-time colleague Ken Thompson, the Unix operating system and B programming language.");
+			}
+			if (rn[0] == 9 && rn[1] == 36 && rn[2] == -1)
+			{
+				printf("Kenneth Lane Thompson (born February 4, 1943) is an American pioneer of computer science. Thompson worked at Bell Labs for most of his career where he designed and implemented the original Unix operating system. He also invented the B programming language, the direct predecessor to the C programming language, and was one of the creators and early developers of the Plan 9 operating system.");
+			}
+			if ((rn[0] == 33 && rn[1] == 36 && rn[2] == 37 && rn[3] == -1) || (rn[0] == 0 && rn[1] == 6 && rn[2] == 36 && rn[3] == 37) || (rn[0] == 0 && rn[1] == 6 && rn[2] == 35 && rn[3] == 36 && rn[4] == 37))
+			{
+				printf("Dennis Ritchie, the man behind the scenes who create the \"C\" programming language or as they call him \"Father of the C programming language\".");
+			}
+			if ((rn[0] == 10 && rn[1] == 11) || (rn[0] == 6 && rn[1] == 10))
+			{
+				printf("Set of instructions executed directly by a computer's central processing unit (CPU).");
+			}
+			if (rn[0] == 6 && rn[1] == 38)
+			{
+				printf("Low-level programming language in which there is a very strong (generally one-to-one) correspondence between the language and the architecture's machine code instructions. ");
+			}
+			if ((rn[0] == 12) || (rn[0] == 6 && rn[1] == 12) || (rn[0] == 13 && rn[1] == 34) || (rn[0] == 3 && rn[1] == 6 && rn[2] == 13))
+			{
+				printf("Also known as B, is a programming language developed at Bell Labs circa 1969. It is the work of Ken Thompson with Dennis Ritchie. B was derived from BCPL, and its name may be a contraction of BCPL.");
+			}
+			if (rn[0] == 0 && rn[1] == 6 && rn[2] == 31)
+			{
+				printf("C++\nJava\nC#\nPerl");
+			}
+			if ((rn[0] == 0 && rn[1] == 22) || (rn[0] == 22 && rn[1] == 33))
+			{
+				printf("Low-level\nSmall\nPermissive");
+			}
+			if ((rn[0] == 0 && rn[1] == 23) || (rn[0] == 23 && rn[1] == 33))
+			{
+				printf("Efficiency\nPortability\nPower\nFlexibility\nStandard library\nIntegration with UNIX");
+			}
+			if ((rn[0] == 0 && rn[1] == 24) || (rn[0] == 24 && rn[1] == 33))
+			{
+				printf("Programs can be difficult to understand.\nPrograms can be error - prone.\nPrograms can be difficult to modify.");
+			}
+			if ((rn[0] == 0 && rn[1] == 25 && rn[2] == 26) || (rn[0] == 25 && rn[1] == 26 && rn[2] == 33))
+			{
+				printf("Learn how to avoid pitfalls.\nUse software tools(lint, debuggers) to make programs more reliable.\nTake advantage of existing code libraries.\nAdopt a sensible set of coding conventions.\nAvoid “tricks” and overly complex code.\nStick to the standard.");
+			}
+			if ((rn[0] == 0 && rn[1] == 30) || (rn[0] == 30 && rn[1] == 33))
+			{
+				printf("K&R C\nDescribed in Kernighan and Ritchie, The C Programming Language(1978)\nDe facto standard\nC89 / C90\nANSI standard X3.159 - 1989 (completed in 1988; formally approved in December 1989)\nInternational standard ISO / IEC 9899:1990\nC99\nInternational standard ISO / IEC 9899 : 1999\nIncorporates changes from Amendment 1 (1995");
+			}
+			if ((rn[0] == 6 && rn[1] == 10 && rn[2] == 11 && rn[3] == 27 && rn[4] == 38) || rn[0] == 6 && rn[1] == 10 && rn[2] == 11 && rn[3] == 28 && rn[4] == 38)
+			{
+				printf("Machine Code: Set of instructions executed directly by a computer's central processing unit (CPU).\nAssembly Language: Low-level programming language in which there is a very strong (generally one-to-one) correspondence between the language and the architecture's machine code instructions.");
+			}
+			if ((rn[0] == 3 && rn[1] == 4 && rn[2] == 27) || (rn[0] == 3 && rn[1] == 4 && rn[2] == 28) || (rn[0] == 4 && rn[1] == 27 && rn[2] == 34) || (rn[0] == 4 && rn[1] == 28 && rn[2] == 34))
+			{
+				printf("B is a programming language developed at Bell Labs circa 1969. It is the work of Ken Thompson with Dennis Ritchie. B was derived from BCPL.\nBCPL Basic Combined Programming Language is a procedural, imperative, and structured computer programming language. Originally intended for writing compilers for other languages, BCPL is no longer in common use. However, its influence is still felt because a stripped down and syntactically changed version of BCPL, called B, was the language on which the C programming language was based.");
+			}
+			if (rn[0] == -1)
+			{
+				printf("This question is out of my Scope...Sorry for that.");
+			}
+			n = -1;
+			for (i = 0; i < 8; i++)
+			{
+				rn[i] = -1;
+			}
+			printf("\n\nAsk Any Other Question or Press Enter to Terminate Program.\n");
+			scanf_s("%c", &q[0]);	
+		}
+		else
+			return 0;
+	}
+	system("pause");
+	return 0;
+}
